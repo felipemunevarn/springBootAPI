@@ -1,5 +1,7 @@
 package com.sofka.api.api.models;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +16,8 @@ public class UsuarioModel {
     private String nombre;
     private String email;
     private Integer prioridad;
+
+    private Boolean isActive = Boolean.TRUE;
 
     public Long getId() {
         return id;
@@ -45,5 +49,13 @@ public class UsuarioModel {
 
     public void setPrioridad(Integer prioridad) {
         this.prioridad = prioridad;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
     }
 }

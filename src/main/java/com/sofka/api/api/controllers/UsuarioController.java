@@ -48,4 +48,14 @@ public class UsuarioController {
             return "No se pudo eliminar el usuario con id: " + id;
         }
     }
+
+    @PutMapping( path = "/{id}")
+    public String eliminaLogicoUsuarioPorId(@PathVariable("id") Long id) {
+        boolean ok = this.usuarioService.eliminaLogicoUsuario(id);
+        if (ok) {
+            return "Se elimino el usuario con id: " + id;
+        } else {
+            return "No se pudo eliminar el usuario con id: " + id;
+        }
+    }
 }

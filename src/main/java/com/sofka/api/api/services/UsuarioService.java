@@ -41,4 +41,16 @@ public class UsuarioService {
             return false;
         }
     }
+
+    public boolean eliminaLogicoUsuario(Long id) {
+        try{
+            Optional<UsuarioModel> u1 = this.obtenerPorId(id);
+            u1.get().setIsActive(false);
+//          usuarioRepository.logicDelById(id);
+            this.guardarUsuario(u1.get());
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
+    }
 }
